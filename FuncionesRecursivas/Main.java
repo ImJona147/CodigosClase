@@ -15,7 +15,9 @@ public class Main {
             System.out.println("4. Contar digitos de un número");
             System.out.println("5. Divisores de un numero");
             System.out.println("6. Restas en un número");
-            System.out.println("7. Finalizar");
+            System.out.println("7. Minimi comun multiplo");
+            System.out.println("8. Invertir un numero");
+            System.out.println("9. Finalizar");
             l1 = eScanner.nextInt();
             switch (l1) {
                 case 1:
@@ -58,6 +60,18 @@ public class Main {
                     System.out.println("Fue restado: " + res);
                     break;
                 case 7:
+                    System.out.println("Ingrese un numero");
+                    l1 = eScanner.nextInt();
+                    System.out.println("Ingrese otro numero");
+                    int minimo = fun.MinimoComunMultiplo(l1, eScanner.nextInt());
+                    System.out.println("El minimo comun multiplo es: " + minimo);
+                    break;
+                case 8:
+                    System.out.println("Ingrese un numero");
+                    l1 = eScanner.nextInt();
+                    String inversa = fun.InversaDeUnNumero(l1);
+                    System.out.println("La inversa es: " + inversa);
+                case 9:
                     term = true;
                     System.out.println("Esta terminado...");
                     break;

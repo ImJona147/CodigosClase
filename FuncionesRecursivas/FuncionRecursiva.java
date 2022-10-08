@@ -50,17 +50,17 @@ public class FuncionRecursiva {
     }
 
     private int ContarDivisores(int numero, int div) {
-        int cont = 0;
+        int c = 0;
         if (div > (numero / 2)) {
-            return cont;
+            return c;
         } else {
             int aux = 0;
             if (numero % div == 0) {
                 aux = 1;
             }
-            cont = aux + ContarDivisores(numero, div + 1);
+            c = aux + ContarDivisores(numero, div + 1);
         }
-        return cont;
+        return c;
     }
 
     public int Fibonacci(int numero) {
@@ -72,4 +72,28 @@ public class FuncionRecursiva {
             return Fibonacci(numero - 1) + Fibonacci(numero - 2);
         }
     }
+
+    public int MinimoComunMultiplo(int numero, int numero2) {
+        if (numero2 <= 0) {
+            return numero;
+        } else {
+            return numero / maximoComunDivisor(numero, numero2) * numero2;
+        }
+    }
+
+    private int maximoComunDivisor(int numero1, int numero2) {
+        if (numero2 <= 0) {
+            return numero1;
+        } else {
+            return maximoComunDivisor(numero2, numero1 % numero2);
+        }
+    }
+
+    public String InversaDeUnNumero(int numero) {
+        if (numero < 10){
+            return String.valueOf(numero);
+         } else{
+            return String.valueOf(numero % 10) + InversaDeUnNumero(numero / 10);
+         }
+       }
 }
